@@ -1,0 +1,102 @@
+
+# Query examples
+query {
+  greet
+}
+
+---------------------------
+query {
+  users {
+    id
+    name
+    email
+    age
+  }
+}
+
+---------------------------
+query {
+  user(id: "1") {
+    name
+    email
+  }
+}
+
+
+---------------------------
+query getAllUsers{
+  users{
+    id
+   name
+    email
+    quotes{
+      name
+      by
+    }
+  }
+}
+
+---------------------------
+query getUserById{
+  user(id:"23131"){
+    id
+    name
+    email
+  }
+}
+-----------------
+query getUserById($userID:ID) {
+  user(id: $userID) {
+    name
+    email
+  }
+}
+
+{
+  "userID":"4232"
+}
+---------------------------
+query quotes{
+  iquote(by:"4232"){
+    by
+    name
+    
+  }
+}
+---------------------------
+query quotes{
+  quotes{
+   by
+    name
+     
+  }
+}
+--------// # Mutation examples
+
+  mutation createuser {
+    createUser(name: "Jane Doe", email: "jane@example.com", age: 25) {
+     id
+    name
+     email
+     age
+   }
+ }
+
+
+---------------------------
+
+
+mutation updateUser{
+  updateUser(id: "1", name: "John Updated") {
+    id
+    name
+    email
+  }
+}
+---------------------------
+mutation deleteUser {
+  deleteUser(id: "1")
+}
+
+
+
