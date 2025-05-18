@@ -8,16 +8,17 @@ query {
 query {
   users {
     id
-    name
+    firstName
+    lastName
     email
-    age
   }
 }
 
 ---------------------------
 query {
   user(id: "1") {
-    name
+    firstName
+    lastName
     email
   }
 }
@@ -27,7 +28,8 @@ query {
 query getAllUsers{
   users{
     id
-   name
+    firstName
+    lastName
     email
     quotes{
       name
@@ -40,14 +42,16 @@ query getAllUsers{
 query getUserById{
   user(id:"23131"){
     id
-    name
+    firstName
+    lastName
     email
   }
 }
 -----------------
 query getUserById($userID:ID) {
   user(id: $userID) {
-    name
+    firstName
+    lastName
     email
   }
 }
@@ -74,11 +78,11 @@ query quotes{
 --------// # Mutation examples
 
   mutation createuser {
-    createUser(name: "Jane Doe", email: "jane@example.com", age: 25) {
+    createUser(firstName: "Jane",lastName: "Doe", email: "jane@example.com") {
      id
-    name
+    firstName
+    lastName
      email
-     age
    }
  }
 
@@ -87,9 +91,10 @@ query quotes{
 
 
 mutation updateUser{
-  updateUser(id: "1", name: "John Updated") {
+  updateUser(id: "1", firstName: "John",lastName: "abharim") {
     id
-    name
+    firstName
+    lastName
     email
   }
 }
@@ -100,3 +105,47 @@ mutation deleteUser {
 
 
 
+
+---------------------------
+mutation createQuote($quote:String!){
+  createQuote(name:$quote)
+}
+
+{
+  "quote":"quote1"
+}
+{
+  "authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODI4NzcxNTUwMTNkMWFkNjY4ZjUwYTMiLCJpYXQiOjE3NDc1MDc5Nzd9.oVpMkKQjLlBVYJF-rmeDRb69XeJ0olVrEL9_i-3u7IQ"
+}
+
+---------------------------
+mutation adduser($userNew:UserInput!){
+  user:signupUser(userNew:$userNew){
+    _id
+    email
+    firstName
+    lastName
+   
+  }
+}
+
+{
+  "userNew": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john@example.com",
+    "password": "password123"
+  }
+}
+---------------------------
+mutation fetchUser($userSignin:UserSigninInput!){
+  user:signinUser(userSignin:$userSignin){
+    token
+  }
+}
+{
+  "userSignin": {
+    "email": "john@example.com",
+    "password": "password123"
+  }
+}
