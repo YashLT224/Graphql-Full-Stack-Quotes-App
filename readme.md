@@ -81,16 +81,20 @@ A modern, full-stack quote sharing application built with React, GraphQL,Node an
 ## 📸 Screenshots
 
 ### Home Page
-![Home Page](./my-react-app/src/assets/S2.png)
+![Home Page](./my-react-app/src/assets/S6.png)
 
 ### Create Quote
-![Create Quote](./my-react-app/src/assets/S3.png)
+![Create Quote](./my-react-app/src/assets/S10.png)
 
 ### User Profile
-![User Profile](./my-react-app/src/assets/S4.png)
+![User Profile](./my-react-app/src/assets/S9.png)
 
 ### Authentication
-![Authentication](./my-react-app/src/assets/S5.png)
+![Authentication](./my-react-app/src/assets/S1.png)
+
+### Graphql Playground
+![Authentication](./my-react-app/src/assets/S2.png)
+
 
 ## 🔑 Key Features in Detail
 
