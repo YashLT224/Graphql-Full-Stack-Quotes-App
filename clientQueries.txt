@@ -27,7 +27,7 @@ query {
 ---------------------------
 query getAllUsers{
   users{
-    id
+    _id
     firstName
     lastName
     email
@@ -41,7 +41,7 @@ query getAllUsers{
 ---------------------------
 query getUserById{
   user(id:"23131"){
-    id
+    _id
     firstName
     lastName
     email
@@ -149,3 +149,17 @@ mutation fetchUser($userSignin:UserSigninInput!){
     "password": "password123"
   }
 }
+
+
+------------------------------------------
+query getMyProfile{
+    user:myprofile{
+        firstName
+        lastName
+        email
+        quotes{
+            name
+        }
+    }
+}
+`

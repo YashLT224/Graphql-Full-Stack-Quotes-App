@@ -9,6 +9,10 @@ type Quote{
     _id:String
      firstName:String
  }
+ type QuoteWithName{
+    name:String
+    by:IdName
+ }
 type User{
     _id:ID!
     firstName:String!
@@ -26,6 +30,7 @@ type Query{
     user(_id:ID):User
     quotes:[QuoteWithName]
     iquote(by:ID!):[Quote]
+    myprofile:User
 }
 
 type Mutation{

@@ -43,7 +43,11 @@ export const resolvers={
         users:async () => await User.find({}),
         user:async (_,{_id})=> await User.findOne({_id}),
         quotes:async ()=>await Quote.find({}).populate("by","_id firstName"),
-        iquote:async (_,{by})=> await Quote.find({by})
+        iquote:async (_,{by})=> await Quote.find({by}),
+        myprofile:async(_,args,{userId})=>{
+            if(!userId)throw new Error('you must be logged in')
+                return await User.findOne({_id:userId})
+        },
     },
     User:{
         // quotes:(ur)=> quotes.filter(quote=>quote.by == ur._id)
@@ -110,7 +114,7 @@ export const resolvers={
         },
         createQuote:async(_,{name},{userId})=>{
             console.log(name)
-            if(!userId) throw newError('You must be logged In')
+            if(!userId) throw new Error('You must be logged In')
                 const newQuote= new Quote({
                 name,
                 by:userId
