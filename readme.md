@@ -57,7 +57,7 @@ A modern, full-stack quote sharing application built with React, GraphQL,Node an
    npm install
    ```
 
-4. Create a `.env` file in the root directory with your MongoDB URI and JWT secret:
+4. Create a `.config` file in the root directory with your MongoDB URI and JWT secret:
    ```
    MONGO_URI=your_mongodb_uri
    JWT_SECRET=your_jwt_secret
