@@ -115,7 +115,7 @@ mutation createQuote($quote:String!){
   "quote":"quote1"
 }
 {
-  "authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODI4NzcxNTUwMTNkMWFkNjY4ZjUwYTMiLCJpYXQiOjE3NDc1MDc5Nzd9.oVpMkKQjLlBVYJF-rmeDRb69XeJ0olVrEL9_i-3u7IQ"
+  "authorization":"token"
 }
 
 ---------------------------
